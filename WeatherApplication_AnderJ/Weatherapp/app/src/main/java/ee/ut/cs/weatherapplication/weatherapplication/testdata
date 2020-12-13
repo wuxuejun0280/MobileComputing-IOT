@@ -1,0 +1,17 @@
+{"coord":{"lon":24.75,"lat":59.44},
+"weather":
+    [{"id":600,
+    "main":"Snow",
+    "description":"light snow",
+    "icon":"13n"}],
+"base":"stations",
+"main":{"temp":269.77,"feels_like":266.51,
+    "temp_min":269.15,
+    "temp_max":270.37,
+    "pressure":1018,"humidity":92},
+"visibility":10000,
+"wind":{"speed":1,"deg":130},
+"clouds":{"all":90},
+"dt":1607875291,
+"sys":{"type":1,"id":1330,"country":"EE","sunrise":1607843471,"sunset":1607865579},
+"timezone":7200,"id":588409,"name":"Tallinn","cod":200}
