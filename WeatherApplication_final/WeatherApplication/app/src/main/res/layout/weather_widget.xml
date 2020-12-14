@@ -45,11 +45,11 @@
                         android:id="@+id/widget_city_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="City"
+                        android:layout_marginStart="10dp"
+                        android:text=""
                         android:textColor="@color/textcolor"
                         android:textSize="18sp"
-                        android:layout_toRightOf="@+id/location_icon" />
+                        android:layout_toEndOf="@+id/location_icon" />
                 </RelativeLayout>
 
                 <ImageView
@@ -72,7 +72,7 @@
                     android:id="@+id/widget_high_low_temperature_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="H 38/L 35"
+                    android:text=""
                     android:gravity="center"
                      android:layout_below="@+id/frame_layout"/>
 
@@ -80,7 +80,7 @@
                     android:id="@+id/widget_weather_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sunny"
+                    android:text=""
                     android:gravity="center"
                     android:textColor="@color/textcolor"
                     android:textSize="25sp"
@@ -97,10 +97,10 @@
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="o"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/degree_O"
                         android:textSize="30sp"
-                        android:layout_toRightOf="@+id/widget_temperature_tv"
+                        android:layout_toEndOf="@+id/widget_temperature_tv"
                         android:layout_alignTop="@+id/widget_temperature_tv"
                         />
 
@@ -108,17 +108,17 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="c"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/degree_C"
                         android:textSize="30sp"
-                        android:layout_toRightOf="@+id/widget_temperature_tv"
+                        android:layout_toEndOf="@+id/widget_temperature_tv"
                         android:layout_alignBottom="@+id/widget_temperature_tv"/>
 
                     <TextView
                         android:id="@+id/widget_temperature_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="38"
+                        android:text=""
                         android:textSize="60sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -143,14 +143,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                tools:ignore="NestedWeights">
 
                 <TextView
-                    android:id="@+id/day_1"
+                    android:id="@+id/widget_day_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="now"
+                    android:text="@string/main_now"
                     android:textColor="@color/textcolor" />
 
                 <ImageView
@@ -158,7 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
-                    android:layout_below="@id/day_1"
+                    android:layout_below="@id/widget_day_1"
                     app:srcCompat="@drawable/sunny" />
             </RelativeLayout>
 
@@ -169,11 +170,11 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/day_2"
+                    android:id="@+id/widget_day_2"
                     android:layout_width="match_parent"
                     android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:text="13th"
+                    android:text=""
                     android:textColor="@color/textcolor" />
 
                 <ImageView
@@ -181,7 +182,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
-                    android:layout_below="@id/day_2"
+                    android:layout_below="@id/widget_day_2"
                     app:srcCompat="@drawable/sunny" />
             </RelativeLayout>
 
@@ -192,11 +193,11 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/day_3"
+                    android:id="@+id/widget_day_3"
                     android:layout_width="match_parent"
                     android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:text="14th"
+                    android:text=""
                     android:textColor="@color/textcolor" />
 
                 <ImageView
@@ -204,7 +205,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
-                    android:layout_below="@+id/day_3"
+                    android:layout_below="@+id/widget_day_3"
                     app:srcCompat="@drawable/sunny" />
             </RelativeLayout>
 
@@ -215,11 +216,11 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/day_4"
+                    android:id="@+id/widget_day_4"
                     android:layout_width="match_parent"
                     android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:text="15th"
+                    android:text=""
                     android:textColor="@color/textcolor" />
 
                 <ImageView
@@ -227,7 +228,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
-                    android:layout_below="@+id/day_4"
+                    android:layout_below="@+id/widget_day_4"
                     app:srcCompat="@drawable/sunny" />
             </RelativeLayout>
 
@@ -238,11 +239,11 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/day_5"
+                    android:id="@+id/widget_day_5"
                     android:layout_width="match_parent"
                     android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:text="16th"
+                    android:text=""
                     android:textColor="@color/textcolor"/>
 
                 <ImageView
@@ -250,7 +251,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
-                    android:layout_below="@+id/day_5"
+                    android:layout_below="@+id/widget_day_5"
                     app:srcCompat="@drawable/sunny" />
             </RelativeLayout>
         </LinearLayout>

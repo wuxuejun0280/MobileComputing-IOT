@@ -26,7 +26,6 @@
         android:layout_height="65dp"
         android:layout_marginStart="20dp"
         android:gravity="center_vertical"
-        android:text="testest"
         android:textColor="@color/itemtextcolor"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

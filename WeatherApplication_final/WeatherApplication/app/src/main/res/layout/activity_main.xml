@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:textColor="@color/textcolor"
-            android:text="Chennan"
+            android:text=""
             android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/textcolor"
             android:layout_marginEnd="16dp"
-            android:text="H 45 ℃/L 35 ℃"
+            android:text=""
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/city_tv" />
@@ -95,8 +95,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textcolor"
-                android:text="c"
-                android:textSize="30dp"
+                android:text="@string/degree_C"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/temperature_tv" />
 
@@ -105,8 +105,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textcolor"
-                android:text="30"
-                android:textSize="60dp"
+                android:text=""
+                android:textSize="60sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -116,8 +116,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textcolor"
-                android:text="o"
-                android:textSize="25dp"
+                android:text="@string/degree_O"
+                android:textSize="25sp"
                 app:layout_constraintStart_toEndOf="@+id/temperature_tv"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -128,8 +128,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/textcolor"
             android:layout_marginEnd="20dp"
-            android:text="storm"
-            android:textSize="35dp"
+            android:text=""
+            android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
@@ -147,7 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textcolor"
-                android:text="5:45"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -156,7 +156,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sunrise"
+                android:text="@string/main_sunrise"
                 android:textColor="@color/textcolor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView5" />
@@ -186,7 +186,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textcolor"
-                android:text="20m/s"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -196,7 +196,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textcolor"
-                android:text="Wind"
+                android:text="@string/main_wind"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -225,7 +225,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textcolor"
-                android:text="50 rh"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -235,7 +235,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textcolor"
-                android:text="humidity"
+                android:text="@string/main_humidity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
@@ -270,7 +270,7 @@
                 android:id="@+id/day_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="now"
+                android:text="@string/main_now"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textColor="@color/textcolor"
                 app:layout_constraintStart_toStartOf="parent"
@@ -297,7 +297,7 @@
                 android:id="@+id/day_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="13th"
+                android:text=""
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textColor="@color/textcolor"
                 app:layout_constraintStart_toStartOf="parent"
@@ -324,7 +324,7 @@
                 android:id="@+id/day_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="14th"
+                android:text=""
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textColor="@color/textcolor"
                 app:layout_constraintStart_toStartOf="parent"
@@ -352,7 +352,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textcolor"
-                android:text="15th"
+                android:text=""
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -379,7 +379,7 @@
                 android:layout_width="wrap_content"
                 android:textColor="@color/textcolor"
                 android:layout_height="wrap_content"
-                android:text="16th"
+                android:text=""
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

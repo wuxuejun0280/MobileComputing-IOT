@@ -60,7 +60,7 @@
             android:id="@+id/mode_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Light Mode"
+            android:text="@string/menu_light_mode"
             android:textColor="@color/textcolor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

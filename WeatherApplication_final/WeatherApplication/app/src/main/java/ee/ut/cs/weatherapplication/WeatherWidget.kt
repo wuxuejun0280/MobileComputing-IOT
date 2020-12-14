@@ -21,8 +21,10 @@ import ee.ut.cs.weatherapplication.weatherapplication.WeatherItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.delay
 import java.time.Instant
+import java.time.LocalDate
 import java.time.ZoneId
 import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 import kotlin.math.abs
 
 
@@ -258,6 +260,11 @@ internal fun updateAppWidget(
     views.setImageViewResource(R.id.widget_day_3_image, provider.getWeatherIcon(provider.weatherItemList[2], true))
     views.setImageViewResource(R.id.widget_day_4_image, provider.getWeatherIcon(provider.weatherItemList[3], true))
     views.setImageViewResource(R.id.widget_day_5_image, provider.getWeatherIcon(provider.weatherItemList[4], true))
+    val date = LocalDate.now().format(DateTimeFormatter.ofPattern("dd")).toInt()
+    views.setTextViewText(R.id.widget_day_2, (date+1).toString())
+    views.setTextViewText(R.id.widget_day_3, (date+2).toString())
+    views.setTextViewText(R.id.widget_day_4, (date+3).toString())
+    views.setTextViewText(R.id.widget_day_5, (date+4).toString())
 
 
     // Instruct the widget manager to update the widget

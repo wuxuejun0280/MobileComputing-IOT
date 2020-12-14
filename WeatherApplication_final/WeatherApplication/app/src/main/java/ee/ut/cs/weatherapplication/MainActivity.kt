@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity() {
         val helper = LocationHelper(applicationContext)
         val location = helper.getCurrentLocationUsingGPS()
         location?.let {
-            if (abs(setting.latitude.toDouble() - it.latitude)<1 && abs(setting.longitude.toDouble() - it.longitude)<1){
+            if (setting.cityName!=""&&abs(setting.latitude.toDouble() - it.latitude)<1 && abs(setting.longitude.toDouble() - it.longitude)<1){
                 val intent = Intent(this, WeatherService::class.java).apply {
                     putExtra(SearchActivity.CITY_NAME, setting.cityName)
                     putExtra(SearchActivity.CITY_LATITUDE, setting.latitude)
@@ -181,6 +181,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addNewCity(result: JsonObject){
+        if (result.get("results").asJsonArray.size()==0){
+            if (setting.cityName==""){
+                setting.cityName = "Tartu, Estonia"
+                setting.latitude = "58.3854"
+                setting.longitude = "26.7247"
+                updateSetting()
+                db.getCityDao().insertCity(City(setting.cityName, setting.latitude, setting.longitude))
+            }
+
+            val intent = Intent(this, WeatherService::class.java).apply {
+                putExtra(SearchActivity.CITY_NAME, setting.cityName)
+                putExtra(SearchActivity.CITY_LATITUDE, setting.latitude)
+                putExtra(SearchActivity.CITY_LONGITUDE, setting.longitude)
+            }
+            startService(intent)
+            return
+        }
+
         val cityName = result
             .get("results").asJsonArray
             .get(0).asJsonObject
@@ -212,6 +230,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun updateSetting(){
+        val settingTemp = db.getSettingDao().loadSetting()[0]
+        setting.mode = settingTemp.mode
         db.getSettingDao().replaceSetting(setting)
         sendBroadcast()
     }
@@ -324,6 +344,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        val permissionsGranted = grantResults.all { it == PackageManager.PERMISSION_GRANTED }
+        if (permissionsGranted) {
+            getCurrentLocation()
+        }
+    }
 
     fun Context.showPermissionRequestExplanation(
         permission: String,
