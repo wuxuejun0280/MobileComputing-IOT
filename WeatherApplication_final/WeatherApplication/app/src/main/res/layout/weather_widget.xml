@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="20dp">
+        android:layout_margin="@dimen/widget_padding">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -45,7 +45,7 @@
                         android:id="@+id/widget_city_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="@dimen/_10dp"
                         android:text=""
                         android:textColor="@color/textcolor"
                         android:textSize="18sp"
@@ -55,10 +55,10 @@
                 <ImageView
                     android:id="@+id/weather_icon"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="@dimen/_100dp"
                     android:layout_below="@id/relative_layout"
                     android:src="@drawable/sunny_big"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="@dimen/_10dp"/>
 
             </RelativeLayout>
             <RelativeLayout
@@ -89,7 +89,7 @@
                 <RelativeLayout
                     android:id="@+id/frame_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
+                    android:layout_height="@dimen/_90dp"
                     android:gravity="center"
                     android:layout_below="@id/widget_weather_tv">
 
@@ -97,7 +97,7 @@
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="@dimen/_5dp"
                         android:text="@string/degree_O"
                         android:textSize="30sp"
                         android:layout_toEndOf="@+id/widget_temperature_tv"
@@ -108,7 +108,7 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="@dimen/_5dp"
                         android:text="@string/degree_C"
                         android:textSize="30sp"
                         android:layout_toEndOf="@+id/widget_temperature_tv"
@@ -157,8 +157,8 @@
                 <ImageView
                     android:id="@+id/widget_day_1_image"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_marginTop="@dimen/_10dp"
                     android:layout_below="@id/widget_day_1"
                     app:srcCompat="@drawable/sunny" />
             </RelativeLayout>
@@ -180,8 +180,8 @@
                 <ImageView
                     android:id="@+id/widget_day_2_image"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_marginTop="@dimen/_10dp"
                     android:layout_below="@id/widget_day_2"
                     app:srcCompat="@drawable/sunny" />
             </RelativeLayout>
@@ -203,8 +203,8 @@
                 <ImageView
                     android:id="@+id/widget_day_3_image"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_marginTop="@dimen/_10dp"
                     android:layout_below="@+id/widget_day_3"
                     app:srcCompat="@drawable/sunny" />
             </RelativeLayout>
@@ -226,8 +226,8 @@
                 <ImageView
                     android:id="@+id/widget_day_4_image"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_marginTop="@dimen/_10dp"
                     android:layout_below="@+id/widget_day_4"
                     app:srcCompat="@drawable/sunny" />
             </RelativeLayout>
@@ -249,8 +249,8 @@
                 <ImageView
                     android:id="@+id/widget_day_5_image"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_marginTop="@dimen/_10dp"
                     android:layout_below="@+id/widget_day_5"
                     app:srcCompat="@drawable/sunny" />
             </RelativeLayout>
