@@ -17,6 +17,10 @@ import ee.ut.cs.weatherapplication.MainActivity
 import ee.ut.cs.weatherapplication.R
 import ee.ut.cs.weatherapplication.SearchActivity
 import ee.ut.cs.weatherapplication.weatherapplication.WeatherItem
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 import us.dustinj.timezonemap.TimeZoneMap
 import java.net.URL
@@ -29,6 +33,7 @@ class WeatherService : Service() {
     lateinit var city:City
     lateinit var timezone:String
     val weatherItemList = ArrayList<WeatherItem>()
+    var timer = Instant.now().toEpochMilli()
 
     private lateinit var myReceiver: ServiceReceiver
     private lateinit var intentFilter: IntentFilter
@@ -39,11 +44,23 @@ class WeatherService : Service() {
             intentFilter = IntentFilter()
             intentFilter.addAction(MainActivity.SEND_UPDATE_REQUEST)
             registerReceiver(myReceiver, intentFilter)
+
+            val scope = CoroutineScope(Dispatchers.Default)
+            scope.launch {
+                while (true) {
+                    if (Instant.now().toEpochMilli() - timer > 1000 * 60 * 60 * 2) {
+                        updateWeather()
+                    }
+                    delay(1000)
+                }
+            }
         }
 
         if (this::city.isInitialized&&weatherItemList.size!=0){
             broadcastWeather()
             return super.onStartCommand(intent, flags, startId)
+        } else {
+            city = City("","","")
         }
         updateWeather(intent)
         return super.onStartCommand(intent, flags, startId)
@@ -59,7 +76,6 @@ class WeatherService : Service() {
     }
 
     fun updateWeather(intent: Intent?){
-        city = City("","","")
         intent?.getStringExtra(SearchActivity.CITY_LATITUDE)?.apply {
             city.latitude = this
         }
@@ -69,6 +85,15 @@ class WeatherService : Service() {
         intent?.getStringExtra(SearchActivity.CITY_NAME)?.apply {
             city.cityName = this
         }
+        if (city.latitude==""||city.longitude==""||city.cityName==""){
+            return
+        }
+        getTimeZone(city.latitude, city.longitude)
+
+        getWeather(city.latitude, city.longitude)
+    }
+
+    fun updateWeather(){
         if (city.latitude==""||city.longitude==""||city.cityName==""){
             return
         }
